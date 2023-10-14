@@ -1,0 +1,46 @@
+@import '../../../../styles.scss';
+
+.container{
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #0f102c ;
+}
+
+.inputs{
+  background: #23233b;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: grid;
+  justify-items: center;
+  .input-container{
+    width: 100%;
+  }
+  gap: .5rem;
+}
+
+.login{
+  width: 22rem;
+}
+
+.title{
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.button{
+  border-radius: 8rem;
+  width: 10rem;
+}
+
+.mat-form-field-label{
+  color:#FFFFFF;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #434459;
+}
+
+

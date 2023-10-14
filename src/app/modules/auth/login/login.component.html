@@ -1,0 +1,19 @@
+<div class="container">
+  <section class="login">
+    <h1 class="title">ENTERPRISE</h1>
+    <form [formGroup]="myForm" class="inputs">
+      <mat-form-field class="input-container">
+        <mat-label class="mat-form-field-label">Correo</mat-label>
+        <input class="input" matInput formControlName="mail" placeholder="Ingrese su correo">
+        <mat-error *ngIf="myForm.controls['mail'].hasError('required')" class="message-error">El correo electrónico es requerido</mat-error>
+        <mat-error *ngIf="myForm.controls['mail'].hasError('email')" class="message-error">El correo electrónico es inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field class="input-container">
+        <mat-label class="mat-form-field-label">Contraseña</mat-label>
+        <input class="input" matInput formControlName="password" placeholder="Ingrese su contraseña" type="password">
+        <mat-error *ngIf="myForm.controls['password'].hasError('required')" class="message-error">La contraseña es requerida</mat-error>
+      </mat-form-field>
+      <button type="submit" mat-flat-button class="button" id="button-login">INGRESAR</button>
+    </form>
+  </section>
+</div>
