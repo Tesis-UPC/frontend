@@ -1,28 +1,30 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon class="menu-icon">menu</mat-icon></button>
-  </mat-toolbar>
+<div class="page-container">
+  <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon class="menu-icon">menu</mat-icon></button>
+    </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
-                 class="sidenav">
-      <mat-nav-list>
-          <mat-list-item [routerLink]="navOption.route"
-          *ngFor="let navOption of fillerNav" class="mat-list-item">
-            <span class="nav-item">
-              <mat-icon class="icon">{{navOption.icon}}</mat-icon>
-              <a class="option-name">{{navOption.name}}</a>
-            </span>
-          </mat-list-item>
-      </mat-nav-list>
-    </mat-sidenav>
+    <mat-sidenav-container class="example-sidenav-container"
+                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+                  class="sidenav">
+        <mat-nav-list>
+            <mat-list-item [routerLink]="navOption.route"
+            *ngFor="let navOption of fillerNav" class="mat-list-item">
+              <span class="nav-item">
+                <mat-icon class="icon">{{navOption.icon}}</mat-icon>
+                <a class="option-name">{{navOption.name}}</a>
+              </span>
+            </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
 
-    <mat-sidenav-content>
-      <section class="container">
-        <router-outlet></router-outlet>
-      </section>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      <mat-sidenav-content>
+        <section class="container">
+          <router-outlet></router-outlet>
+        </section>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
 </div>

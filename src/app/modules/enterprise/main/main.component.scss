@@ -1,5 +1,24 @@
 @import '../../../../styles.scss';
 
+.page-container{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../../../assets/background-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(20px); /* Aplicar efecto de difuminado solo al pseudoelemento */
+    z-index: -1;
+  }
+}
+
 .example-container {
   display: flex;
   flex-direction: column;
@@ -8,12 +27,18 @@
   bottom: 0;
   left: 0;
   right: 0;
+  padding: 4rem;
 }
 
 .example-is-mobile .example-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
+}
+
+.example-toolbar{
+  border-radius: 2rem 2rem 0 0;
+  background-color: rgba($color: #FFFFFF, $alpha: .5);
 }
 
 h1.example-app-name {
@@ -24,6 +49,8 @@ h1.example-app-name {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
+  border-radius: 0 0 2rem 2rem;
+  background-color: transparent;
 }
 
 .example-is-mobile .example-sidenav-container {
@@ -37,6 +64,7 @@ h1.example-app-name {
   height: 100%;
   display: grid;
   place-content: center;
+  background-color: rgba($color: #FFFFFF, $alpha: .5);
 }
 
 .nav-item{
@@ -57,3 +85,13 @@ h1.example-app-name {
   margin-right: 1rem;
 }
 
+@media (max-width: 600px) {
+
+  .example-container {
+    padding: 0;
+  }
+
+  .example-sidenav-container, .example-toolbar{
+    border-radius: 0;
+  }
+}
