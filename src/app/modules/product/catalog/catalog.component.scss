@@ -1,3 +1,5 @@
+@import '../../../../styles.scss';
+
 .products{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
@@ -11,31 +13,90 @@
   padding-top: 0;
 }
 
+.mat-card-image{
+  height: 15rem;
+  object-fit: cover;
+}
+
 .content{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 1rem;
+  display: grid;
+  justify-items: center;
 }
 
 .name, .price{
   color: #000000;
 }
 
-.name{
+.name, .quantity, .price{
   margin-bottom: 0;
 }
 
+.quantity{
+  font-size: 18px;
+}
+
+.name{
+  font-size: 25px;
+}
+
 .price{
+  font-size: 20px;
   font-weight: bold;
 }
 
 .example-card{
   width: 20rem;
+  height: 25rem;
+  border-radius: 2rem;
+  position: relative;
 }
 
 .icon{
-  color:#000000;
+  font-size: 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0;
 }
+
+.icon-edit{
+  margin: 0;
+}
+
+.edit-container{
+  background: #eff0f1;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100px;
+  border-radius: 1rem;
+}
+
+.icon-container{
+  background: #eff0f1;
+  border-radius: 1rem;
+  height: 50px;
+}
+
+.mat-card-actions{
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.buy-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 120px;
+  justify-content: space-between;
+}
+
+
 
 @media (max-width: 500px) {
   .products{

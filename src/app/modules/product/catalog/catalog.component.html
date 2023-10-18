@@ -3,13 +3,20 @@
     <img class="mat-card-image" mat-card-image [src]="product.image" alt="product">
     <div class="content">
       <mat-card-content class="mat-card-content">
-        <p class="name">{{product.name}}</p>
-        <p class="price"> S/.{{product.price}}</p>
+        <h2 class="name">{{product.name}}</h2>
       </mat-card-content>
       <mat-card-actions class="mat-card-actions">
-        <button mat-icon-button>
-          <mat-icon class="icon">shopping_basket</mat-icon>
-        </button>
+        <div class="edit-container">
+          <mat-icon class="icon-edit">remove</mat-icon>
+          <p class="quantity">0</p>
+          <mat-icon class="icon-edit">add</mat-icon>
+        </div>
+        <div class="buy-container">
+          <p class="price"> S/.{{product.price}}</p>
+          <button mat-button class="icon-container">
+            <mat-icon class="icon">add_circle</mat-icon>
+          </button>
+        </div>
       </mat-card-actions>
     </div>
   </mat-card>
