@@ -1,0 +1,23 @@
+.home-header{
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 2rem 1rem;
+}
+
+.title{
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 4rem;
+  color: #FFFFFF;
+}
+
+
+.image-container{
+  width: 20rem;
+  .image{
+    width: 100%;
+  }
+}

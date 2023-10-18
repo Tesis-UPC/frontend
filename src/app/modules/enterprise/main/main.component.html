@@ -1,7 +1,19 @@
-<div class="page-container">
   <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()"><mat-icon class="menu-icon">menu</mat-icon></button>
+      <button mat-icon-button (click)="snav.toggle()" class="mat-icon-button"><mat-icon class="menu-icon">menu</mat-icon></button>
+      <div class="logo">
+        <p class="logo-text">Enterprise</p>
+        <p class="logo-phrase">Wake up to something special</p>
+      </div>
+      <div class="options">
+        <a [routerLink]="navOption.route"
+        *ngFor="let navOption of fillerNavScreen" class="nav-option">
+          {{navOption.name}}
+        </a>
+        <button mat-flat-button routerLink="../auth/login" class="nav-option" id="login-container">
+          <a class="nav-option">Login</a>
+        </button>
+      </div>
     </mat-toolbar>
 
     <mat-sidenav-container class="example-sidenav-container"
@@ -20,11 +32,10 @@
         </mat-nav-list>
       </mat-sidenav>
 
-      <mat-sidenav-content>
+      <mat-sidenav-content class="sidenav-container">
         <section class="container">
           <router-outlet></router-outlet>
         </section>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
-</div>

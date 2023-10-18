@@ -16,7 +16,13 @@ export class MainComponent implements OnDestroy {
     {name: 'Productos', route: 'product/catalog', icon:'category'},
     {name: 'Contacto', route: 'contact', icon:'badge'},
     {name: 'Login', route: '../auth/login', icon:'person'},
-    {name: 'Regístrate', route: '../auth/register', icon:'person_add'},
+  ];
+
+  fillerNavScreen = [
+    {name: 'Inicio', route: 'home', icon:'home'},
+    {name: 'Nosotros', route: 'about-us', icon:'group'},
+    {name: 'Productos', route: 'product/catalog', icon:'category'},
+    {name: 'Contacto', route: 'contact', icon:'badge'},
   ];
 
 
