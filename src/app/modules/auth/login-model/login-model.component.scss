@@ -1,0 +1,15 @@
+@import '../../../../styles.scss';
+
+.inputs{
+  display: grid;
+  padding: 1rem;
+}
+
+.register{
+  cursor: pointer;
+}
+
+#button-login-model{
+  background: $secondary;
+  color: #FFFFFF;
+}

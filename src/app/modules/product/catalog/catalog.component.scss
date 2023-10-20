@@ -15,8 +15,9 @@
 
 .mat-card-image{
   height: 15rem;
-  object-fit: cover;
+  object-fit: contain;
 }
+
 
 .content{
   padding-top: 1rem;
@@ -61,6 +62,7 @@
 
 .icon-edit{
   margin: 0;
+  cursor: pointer;
 }
 
 .edit-container{
@@ -92,10 +94,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 120px;
+  width: 150px;
   justify-content: space-between;
 }
-
 
 
 @media (max-width: 500px) {

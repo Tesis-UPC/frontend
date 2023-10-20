@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ export class LoginComponent {
   myForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
+    private router: Router
   ){
     this.reactiveForm();
   }
@@ -19,6 +21,10 @@ export class LoginComponent {
       mail: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required]]
     });
+  }
+
+  goToRegister(){
+    this.router.navigate(['/auth/register']);
   }
 
 }

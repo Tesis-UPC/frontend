@@ -7,13 +7,13 @@
       </mat-card-content>
       <mat-card-actions class="mat-card-actions">
         <div class="edit-container">
-          <mat-icon class="icon-edit">remove</mat-icon>
-          <p class="quantity">0</p>
-          <mat-icon class="icon-edit">add</mat-icon>
+          <mat-icon class="icon-edit" (click)="removeProduct(product)">remove</mat-icon>
+          <p class="quantity">{{product.quantity}}</p>
+          <mat-icon class="icon-edit" (click)="addProduct(product)">add</mat-icon>
         </div>
         <div class="buy-container">
-          <p class="price"> S/.{{product.price}}</p>
-          <button mat-button class="icon-container">
+          <p class="price"> S/.{{product.price.toFixed(2)}}</p>
+          <button mat-button class="icon-container" (click)="openDialog()">
             <mat-icon class="icon">add_circle</mat-icon>
           </button>
         </div>
