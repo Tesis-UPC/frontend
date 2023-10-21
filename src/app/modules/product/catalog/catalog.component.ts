@@ -45,6 +45,8 @@ export class CatalogComponent {
     if(localStorage.getItem('isLogged')!= 'true')
       this.dialog.open(LoginModelComponent);
     else{
+      const cartProductsJSON = localStorage.getItem('cartProducts');
+      this.cartProducts = cartProductsJSON ? JSON.parse(cartProductsJSON) : [];;
       const existingProductIndex = this.cartProducts.findIndex(p => p.id === product.id);
       if (existingProductIndex !== -1) {
         this.cartProducts.splice(existingProductIndex, 1);

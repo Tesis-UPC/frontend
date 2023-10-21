@@ -51,7 +51,7 @@ export class MainComponent implements OnDestroy, OnInit {
 
   exit(){
     localStorage.clear();
-    window.location.reload();
+    window.location.href = '/enterprise';
   }
 
 }

@@ -1,1 +1,30 @@
-<p>shopping-cart works!</p>
+<div class="container">
+  <section class="cart-products">
+    <h2 class="subtitle">Productos</h2>
+    <div class="product-card" *ngFor="let product of productsCart">
+      <div class="image-container">
+        <img class="image" [src]="product.imageUrl" [alt]="product.name">
+      </div>
+      <div class="information-container">
+        <h2 class="product-name">{{product.name}}</h2>
+        <p class="description">{{product.description}}</p>
+        <p class="price"> S/.{{product.price.toFixed(2)}}</p>
+      </div>
+      <div class="edit-container">
+        <div class="edit-quantity">
+          <mat-icon class="icon-edit" (click)="removeProduct(product)">remove</mat-icon>
+          <p class="quantity">{{product.quantity}}</p>
+          <mat-icon class="icon-edit" (click)="addProduct(product)">add</mat-icon>
+        </div>
+        <button mat-icon-button class="delete-button" (click)="delete(product)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="summary">
+    <h2 class="subtitle">Resumen Del Pedido</h2>
+    <h2 class="total-price"> S/. {{totalCost}}</h2>
+    <button mat-flat-button id="buy-button">Comprar ahora ({{quantity}})</button>
+  </section>
+</div>

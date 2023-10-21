@@ -15,6 +15,10 @@
         </button>
       </div>
       <div class="options-logged" *ngIf="isLogged == 'true'">
+        <a routerLink="product/catalog"
+         class="nav-option">
+         Productos
+        </a>
         <button mat-icon-button class="logged-option" routerLink="product/cart">
           <mat-icon class="logged-icon">shopping_cart</mat-icon>
         </button>
@@ -46,6 +50,13 @@
               <span class="nav-item">
                 <mat-icon class="icon">{{navOption.icon}}</mat-icon>
                 <a class="option-name">{{navOption.name}}</a>
+              </span>
+            </mat-list-item>
+            <mat-list-item *ngIf="isLogged == 'true'" (click)="exit()"
+             class="mat-list-item">
+              <span class="nav-item">
+                <mat-icon class="icon">logout</mat-icon>
+                <a class="option-name">Salir</a>
               </span>
             </mat-list-item>
         </mat-nav-list>

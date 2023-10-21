@@ -112,14 +112,17 @@ p{
 
 .options-logged{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
+  width: 10rem;
+  align-items: center;
 }
 
 .logged-option{
   display: grid;
   place-content: center;
-  background: $secondary;
+  background: #FFFFFF;
 }
 
 
@@ -137,7 +140,7 @@ p{
     padding: 0 1rem;
     background: $primary-ligth;
   }
-  .options,.logo-text, .logo-phrase{
+  .options,.logo-text, .logo-phrase, .options-logged{
     display: none;
   }
 

@@ -1,0 +1,73 @@
+@import '../../../../styles.scss';
+
+.container{
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  gap: 2rem;
+  .cart-products, .summary{
+    background: #FFFFFF;
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+}
+
+.cart-products{
+  display: grid;
+  gap:1rem;
+}
+
+.summary{
+  display: grid;
+  height: 12rem;
+  .total-price{
+    justify-self: end;
+  }
+}
+
+.product-card{
+  width: 100%;
+  display: grid;
+  padding: 1rem;
+  background-color: #eff0f1;
+  border-radius: 2rem;
+  grid-template-columns: 10rem 1fr 10rem;
+  gap: 2rem;
+  height: 10rem;
+  .image-container{
+    .image{
+      height: 8rem;
+      width: 8rem;
+    }
+  }
+}
+
+p, h2{
+  margin-bottom: 0;
+}
+
+.edit-quantity{
+  background: #ffffff;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100px;
+  border-radius: 1rem;
+}
+
+.edit-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: end;
+}
+
+.icon-edit{
+  cursor: pointer;
+}
+
+#buy-button{
+  background: $primary;
+  color: #FFFFFF;
+}
