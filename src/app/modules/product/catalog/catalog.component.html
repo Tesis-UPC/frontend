@@ -1,6 +1,6 @@
 <div class="products">
   <mat-card class="example-card" *ngFor="let product of products">
-    <img class="mat-card-image" mat-card-image [src]="product.image" alt="product">
+    <img class="mat-card-image" mat-card-image [src]="product.imageUrl" alt="product">
     <div class="content">
       <mat-card-content class="mat-card-content">
         <h2 class="name">{{product.name}}</h2>
@@ -13,7 +13,7 @@
         </div>
         <div class="buy-container">
           <p class="price"> S/.{{product.price.toFixed(2)}}</p>
-          <button mat-button class="icon-container" (click)="openDialog()">
+          <button mat-button class="icon-container" (click)="openDialog(product)">
             <mat-icon class="icon">add_circle</mat-icon>
           </button>
         </div>

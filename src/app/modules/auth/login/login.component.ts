@@ -27,4 +27,9 @@ export class LoginComponent {
     this.router.navigate(['/auth/register']);
   }
 
+  login(){
+    localStorage.setItem('isLogged', 'true');
+    this.router.navigate(['/enterprise/product/catalog']);
+  }
+
 }

@@ -13,7 +13,7 @@
         <input class="input" matInput formControlName="password" placeholder="Ingrese su contraseña" type="password">
         <mat-error *ngIf="myForm.controls['password'].hasError('required')" class="message-error">La contraseña es requerida</mat-error>
       </mat-form-field>
-      <button type="submit" mat-flat-button class="button" id="button-login">INGRESAR</button>
+      <button type="submit" mat-flat-button class="button" id="button-login" (click)="login()">INGRESAR</button>
       <p class="register-message">¿Aún no tienes una cuenta? <b class="register" (click)="goToRegister()">Regístrate</b></p>
     </form>
   </section>

@@ -103,6 +103,26 @@ p{
   color: #FFFFFF;
 }
 
+.logged-icon{
+  font-size: 1.8rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  color: $primary;
+}
+
+.options-logged{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.logged-option{
+  display: grid;
+  place-content: center;
+  background: $secondary;
+}
+
+
 @media (max-width: 600px) {
 
   .example-container {
@@ -119,6 +139,10 @@ p{
   }
   .options,.logo-text, .logo-phrase{
     display: none;
+  }
+
+  .logged-option{
+    background: none;
   }
 
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 
@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnDestroy {
+export class MainComponent implements OnDestroy, OnInit {
  mobileQuery: MediaQueryList;
+ isLogged: string| null = '';
 
   fillerNav = [
     {name: 'Inicio', route: 'home', icon:'home'},
@@ -25,6 +26,11 @@ export class MainComponent implements OnDestroy {
     {name: 'Contacto', route: 'contact', icon:'badge'},
   ];
 
+  fillerLoginNav = [
+    {name: 'Productos', route: 'product/catalog', icon:'category'},
+    {name: 'Carrito', route: 'product/cart', icon:'shopping_cart'},
+    {name: 'Perfil', route: 'auth/profile', icon:'person'},
+  ]
 
   private _mobileQueryListener: () => void;
 
@@ -35,6 +41,9 @@ export class MainComponent implements OnDestroy {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
+  ngOnInit(): void {
+    this.isLogged = localStorage.getItem('isLogged');
+  }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
@@ -42,7 +51,7 @@ export class MainComponent implements OnDestroy {
 
   exit(){
     localStorage.clear();
-    this.router.navigate(['/']);
+    window.location.reload();
   }
 
 }

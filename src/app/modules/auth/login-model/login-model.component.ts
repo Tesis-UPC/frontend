@@ -29,4 +29,9 @@ export class LoginModelComponent {
     this.dialogRef.close();
     this.router.navigate(['/auth/register']);
   }
+
+  login(){
+    localStorage.setItem('isLogged', 'true');
+    window.location.reload();
+  }
 }

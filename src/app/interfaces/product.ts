@@ -1,7 +1,15 @@
 export interface Product{
-  id:number;
-  name:string;
+  id:string;
   price: number;
+  name:string;
+  type:string;
+  unitMeasure:string;
+  description: string;
   quantity: number;
-  image:string;
+  imageUrl:string;
+}
+
+export interface ProductOrder{
+  id:string;
+  quantity: number;
 }

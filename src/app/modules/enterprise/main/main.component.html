@@ -5,7 +5,7 @@
         <p class="logo-text">HAZEL</p>
         <p class="logo-phrase">Wake up to something special</p>
       </div>
-      <div class="options">
+      <div class="options" *ngIf="isLogged!= 'true'">
         <a [routerLink]="navOption.route"
         *ngFor="let navOption of fillerNavScreen" class="nav-option">
           {{navOption.name}}
@@ -13,6 +13,24 @@
         <button mat-flat-button routerLink="../auth/login" class="nav-option" id="login-container">
           <a class="nav-option">Login</a>
         </button>
+      </div>
+      <div class="options-logged" *ngIf="isLogged == 'true'">
+        <button mat-icon-button class="logged-option" routerLink="product/cart">
+          <mat-icon class="logged-icon">shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button class="logged-option" [matMenuTriggerFor]="menu">
+          <mat-icon class="logged-icon">person</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>Ver Perfil</span>
+          </button>
+          <button mat-menu-item (click)="exit()">
+            <mat-icon>logout</mat-icon>
+            <span>Salir</span>
+          </button>
+        </mat-menu>
       </div>
     </mat-toolbar>
 
@@ -23,7 +41,8 @@
                   class="sidenav">
         <mat-nav-list>
             <mat-list-item [routerLink]="navOption.route"
-            *ngFor="let navOption of fillerNav" class="mat-list-item">
+            *ngFor="let navOption of isLogged == 'true'?
+            fillerLoginNav : fillerNav" class="mat-list-item">
               <span class="nav-item">
                 <mat-icon class="icon">{{navOption.icon}}</mat-icon>
                 <a class="option-name">{{navOption.name}}</a>
