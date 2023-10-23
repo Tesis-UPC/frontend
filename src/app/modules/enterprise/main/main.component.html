@@ -19,8 +19,9 @@
          class="nav-option">
          Productos
         </a>
-        <button mat-icon-button class="logged-option" routerLink="product/cart">
+        <button mat-icon-button class="logged-option cart-button" routerLink="product/cart">
           <mat-icon class="logged-icon">shopping_cart</mat-icon>
+          <div class="counter-cart">{{getQuantity()}}</div>
         </button>
         <button mat-icon-button class="logged-option" [matMenuTriggerFor]="menu">
           <mat-icon class="logged-icon">person</mat-icon>

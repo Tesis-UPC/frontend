@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'src/app/interfaces/product';
+import { BuyDialogComponent } from '../buy-dialog/buy-dialog.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,7 +12,9 @@ export class ShoppingCartComponent {
   productsCart:Product[];
   totalCost:number;
   quantity:number;
-  constructor(){
+  constructor(
+    public dialog: MatDialog
+    ){
     const cartProductsJSON = localStorage.getItem('cartProducts');
     this.productsCart = cartProductsJSON ? JSON.parse(cartProductsJSON) : [];;
     this.totalCost = 0;
@@ -45,5 +49,9 @@ export class ShoppingCartComponent {
       localStorage.setItem('cartProducts', JSON.stringify(this.productsCart));
     }
     this.calculateTotal();
+  }
+
+  openDialog(){
+    this.dialog.open(BuyDialogComponent);
   }
 }

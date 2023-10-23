@@ -1,0 +1,22 @@
+<section class="buy-section">
+  <h1 class="title">HAZEL</h1>
+  <form [formGroup]="myForm" class="inputs">
+    <mat-form-field class="input-container">
+      <span matPrefix>  &nbsp; <mat-icon matSuffix>credit_card</mat-icon> &nbsp;</span>
+      <input class="input" matInput formControlName="cardNumber" placeholder="Número de Tarjeta">
+      <mat-error *ngIf="myForm.controls['cardNumber'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-container">
+      <span matPrefix> &nbsp; <mat-icon matSuffix>calendar_month</mat-icon> &nbsp;</span>
+      <input class="input" matInput formControlName="fvv" placeholder="MM/AA">
+      <mat-error *ngIf="myForm.controls['fvv'].hasError('mmAaFormat')" class="message-error">El formato debe ser MM/AA</mat-error>
+      <mat-error *ngIf="myForm.controls['fvv'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-container">
+      <span matPrefix> &nbsp; <mat-icon matSuffix>credit_card</mat-icon> &nbsp;</span>
+      <input class="input" matInput formControlName="cvv" placeholder="CVV" type="text">
+      <mat-error *ngIf="myForm.controls['cvv'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-flat-button class="button" id="button-buy">Pagar</button>
+  </form>
+</section>

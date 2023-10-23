@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-main',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class MainComponent implements OnDestroy, OnInit {
  mobileQuery: MediaQueryList;
  isLogged: string| null = '';
+
 
   fillerNav = [
     {name: 'Inicio', route: 'home', icon:'home'},
@@ -47,6 +49,13 @@ export class MainComponent implements OnDestroy, OnInit {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  getQuantity(): any{
+    const cartProductsJSON = localStorage.getItem('cartProducts');
+    let cart = cartProductsJSON ? JSON.parse(cartProductsJSON) : [];
+    return cart.length;
+
   }
 
   exit(){

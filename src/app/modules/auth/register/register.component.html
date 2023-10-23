@@ -4,28 +4,32 @@
     <form [formGroup]="myForm" class="inputs">
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Nombre</mat-label>
-        <input class="input" matInput formControlName="name" placeholder="Ingrese su nombre" type="text">
+        <input class="input" matInput formControlName="name" type="text">
         <mat-error *ngIf="myForm.controls['name'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
       </mat-form-field>
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Apellido</mat-label>
-        <input class="input" matInput formControlName="lastName" placeholder="Ingrese su apellido" type="text">
+        <input class="input" matInput formControlName="lastName" type="text" style="
+        color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['lastName'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
       </mat-form-field>
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Correo</mat-label>
-        <input class="input" matInput formControlName="mail" placeholder="Ingrese su correo">
+        <input class="input" matInput formControlName="mail" style="
+        color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['mail'].hasError('required')" class="message-error">El correo electrónico es requerido</mat-error>
         <mat-error *ngIf="myForm.controls['mail'].hasError('email')" class="message-error">El correo electrónico es inválido</mat-error>
       </mat-form-field>
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Contraseña</mat-label>
-        <input class="input" matInput formControlName="password" placeholder="Ingrese su contraseña" type="password">
+        <input class="input" matInput formControlName="password" type="password" style="
+        color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['password'].hasError('required')" class="message-error">La contraseña es requerida</mat-error>
       </mat-form-field>
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Repetir contraseña</mat-label>
-        <input class="input" matInput formControlName="repeatPassword" placeholder="Repita su contraseña" type="password">
+        <input class="input" matInput formControlName="repeatPassword" type="password" style="
+        color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['repeatPassword'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
       </mat-form-field>
       <button type="submit" mat-flat-button class="button" id="button-login">REGISTRARSE</button>

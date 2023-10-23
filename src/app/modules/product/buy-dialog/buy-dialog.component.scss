@@ -2,15 +2,19 @@
 
 .inputs{
   display: grid;
-  padding: 1rem;
 }
 
-.register{
-  cursor: pointer;
+.title{
+  font-weight: bold;
 }
 
-#button-login-model{
-  background: $secondary;
+.buy-section{
+  padding: 2rem;
+  text-align: center;
+}
+
+#button-buy{
+  background: $primary;
   color: #FFFFFF;
 }
 

@@ -25,6 +25,6 @@
   <section class="summary">
     <h2 class="subtitle">Resumen Del Pedido</h2>
     <h2 class="total-price"> S/. {{totalCost}}</h2>
-    <button mat-flat-button id="buy-button">Comprar ahora ({{quantity}})</button>
+    <button mat-flat-button id="buy-button" (click)="openDialog()">Comprar ahora ({{quantity}})</button>
   </section>
 </div>
