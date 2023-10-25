@@ -4,7 +4,8 @@
     <form [formGroup]="myForm" class="inputs">
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Nombre</mat-label>
-        <input class="input" matInput formControlName="name" type="text">
+        <input class="input" matInput formControlName="name" type="text" style="
+        color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['name'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
       </mat-form-field>
       <mat-form-field class="input-container">
@@ -12,6 +13,12 @@
         <input class="input" matInput formControlName="lastName" type="text" style="
         color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['lastName'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field class="input-container">
+        <mat-label class="mat-form-field-label">Dirección</mat-label>
+        <input class="input" matInput formControlName="address" type="text" style="
+        color: #FFFFFF">
+        <mat-error *ngIf="myForm.controls['address'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
       </mat-form-field>
       <mat-form-field class="input-container">
         <mat-label class="mat-form-field-label">Correo</mat-label>
@@ -32,7 +39,7 @@
         color: #FFFFFF">
         <mat-error *ngIf="myForm.controls['repeatPassword'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
       </mat-form-field>
-      <button type="submit" mat-flat-button class="button" id="button-login">REGISTRARSE</button>
+      <button [disabled]="myForm.invalid" type="submit" mat-flat-button class="button" id="button-login" (click)="register()">REGISTRARSE</button>
     </form>
   </section>
 </div>

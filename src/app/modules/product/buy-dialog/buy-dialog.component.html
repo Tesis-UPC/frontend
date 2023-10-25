@@ -17,6 +17,11 @@
       <input class="input" matInput formControlName="cvv" placeholder="CVV" type="text">
       <mat-error *ngIf="myForm.controls['cvv'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
     </mat-form-field>
-    <button type="submit" mat-flat-button class="button" id="button-buy">Pagar</button>
+    <mat-form-field class="input-container">
+      <span matPrefix> &nbsp; <mat-icon matSuffix>home_pin</mat-icon> &nbsp;</span>
+      <input class="input" matInput formControlName="shippingAddress" placeholder="Dirección de envío" type="text">
+      <mat-error *ngIf="myForm.controls['shippingAddress'].hasError('required')" class="message-error">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button [disabled]="myForm.invalid" type="submit" mat-flat-button class="button" id="button-buy" (click)="buy()">Pagar</button>
   </form>
 </section>
