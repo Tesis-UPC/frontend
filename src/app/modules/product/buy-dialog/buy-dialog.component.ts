@@ -1,7 +1,9 @@
 import { Order } from './../../../interfaces/order';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Product, ProductOrder } from 'src/app/interfaces/product';
 import { OrderService } from 'src/app/services/order.service';
 
@@ -17,7 +19,9 @@ export class BuyDialogComponent {
   constructor(
     private fb: FormBuilder,
     private orderService: OrderService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<BuyDialogComponent>,
+    private router: Router
   ){
     this.reactiveForm();
     this.productsOrder = [];
@@ -56,6 +60,10 @@ export class BuyDialogComponent {
       this.snackBar.open('Compra realizada con éxito!', '', {
         duration: 3000,
       });
+      this.dialogRef.close();
+      localStorage.setItem('cartProducts', '');
+      this.router.navigate(['/enterprise/product/catalog']);
+
     });
   }
 
