@@ -59,9 +59,15 @@ export class MainComponent implements OnDestroy, OnInit {
   }
 
   exit(){
-    this.authService.logout().subscribe(()=>{
-      localStorage.clear();
-      window.location.href = '/enterprise';
+    this.authService.logout().subscribe({
+      next: () => {
+        localStorage.clear();
+        window.location.href = '/enterprise';
+      },
+      error: () => {
+        localStorage.clear();
+        window.location.href = '/enterprise';
+      },
     })
   }
 
