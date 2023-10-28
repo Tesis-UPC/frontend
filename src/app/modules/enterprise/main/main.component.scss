@@ -83,11 +83,6 @@ h1.example-app-name {
   color: #FFFFFF;
 }
 
-.logo-phrase{
-  font-size: 1rem;
-  color: #FFFFFF;
-}
-
 .options{
   display: grid;
   grid-template-columns: repeat(5, 80px);
@@ -154,7 +149,7 @@ p{
     padding: 0 1rem;
     background: $primary-ligth;
   }
-  .options,.logo-text, .logo-phrase, .options-logged{
+  .options,.logo-text, .options-logged{
     display: none;
   }
 
