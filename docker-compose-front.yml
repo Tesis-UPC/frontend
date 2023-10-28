@@ -1,0 +1,15 @@
+version: '3'
+services:
+  tesis-angular-app:
+    image: nginx:alpine
+    container_name: tesis-front
+    ports:
+      - "4200:80"
+    volumes:
+      - ./dist/front-g:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - angular-network
+
+networks:
+  angular-network:
