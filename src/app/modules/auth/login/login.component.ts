@@ -40,7 +40,7 @@ export class LoginComponent {
 
     this.authService.login(userLogin).subscribe({
       next: (token:any) => {
-        if(token.message = null){
+        if(token.message == null){
           this.snackBar.open('Ingreso exitoso!', '', {
             duration: 3000,
           });
