@@ -40,12 +40,19 @@ export class LoginComponent {
 
     this.authService.login(userLogin).subscribe({
       next: (token:any) => {
-        this.snackBar.open('Ingreso exitoso!', '', {
-          duration: 3000,
-        });
-        localStorage.setItem('token','Bearer '+ token.access_token);
-        localStorage.setItem('isLogged', 'true');
-        this.router.navigate(['/enterprise/product/catalog']);
+        if(token.message = null){
+          this.snackBar.open('Ingreso exitoso!', '', {
+            duration: 3000,
+          });
+          localStorage.setItem('token','Bearer '+ token.access_token);
+          localStorage.setItem('isLogged', 'true');
+          this.router.navigate(['/enterprise/product/catalog']);
+        }
+        else{
+          this.snackBar.open('Datos incorrectos', '',{
+            duration: 3000,
+          });
+        }
       },
       error: () => {
         this.snackBar.open('Datos incorrectos', '',{
